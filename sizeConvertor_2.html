@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row ">
+            <div class="col-2">
+                Product details
+            </div>
+        </div>
+
+        <div class="button">
+            <input type="button" id="inch"  value="inch" class = "active"    data-checked="true" />
+            <input type="button" id="cm"    value="cm"   class = "inactive"  data-checked="false" />
+        </div>
+
+        <div class="row ">
+            <div class="col-1">
+                Length
+            </div>
+            <div class="col-1" id='number'>
+                42
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-1">
+                Size
+            </div>
+            <div class="col-1" id='number'>
+                36
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col-1">
+                Waist
+            </div>
+            <div class="col-1" id='number'>
+                18
+            </div>
+        </div>
+    </div>
+</isif>
+
+<script>
+
+    document.querySelector('.button').onclick = check;
+    
+    function check(event) {
+
+        
+        if (event.target.className === 'inactive'){
+            var coefficient = event.target.id === "cm" ? 2.54 : 1/2.54;
+            var measurement = event.target.id === "cm" ? "cm" : "inch";
+
+            var elements = document.querySelectorAll('[id=number]');
+
+            for( var i = 0; i < elements.length; i++) {
+                elements[i].innerHTML = (parseFloat(elements[i].innerHTML) * coefficient).toFixed(0) + " " + measurement;
+            }
+        }
+        
+
+        if (event.target.className != 'active'){
+            document.querySelectorAll('.button input').forEach(function (x) {
+                x.className = x.className === 'active' ? 'inactive' : 'active';
+            })
+        };
+    }
+
+
+    // function changeText(e) {
+        
+    //     var elements = document.querySelectorAll('[id=number]');
+        
+    //     for( var i = 0; i < elements.length; i++) {
+    //         elements[i].innerHTML = +elements[i].innerHTML * 3;
+    //     }
+    // }
+
+    // // const button = document.getElementById('submit');
+    // var button = document.getElementsByClassName("active");
+    // button[0].addEventListener('click', () => changeText('the new text I want '));
+    
+    
+    
+
+
+    // document.getElementsByClassName("active").addEventListener("click", function changeText (e) {    })
+
+        
+        
+    //     for (var i=1; i < td_d.length; i++) {
+    //         if (i % 7 == 0) continue;
+    //         td_d[i].innerHTML = (+td_d[i].innerHTML * 0.393701).toFixed(0);
+    //     }
+
+    //     var elems = document.querySelector(".active");
+    //     if(elems !==null){
+    //         elems.classList.remove("active");
+    //     }
+    //     e.target.className = "active";
+    // });
+    // -------------------------------------------------------------------------------------
+    // function myFunction(e) {
+    //     var elems = document.querySelector(".active");
+    //     if(elems !==null){
+    //         elems.classList.remove("active");
+    //     }
+    //     e.target.className = "active";
+    // }
+</script>
+ 
+</body>
+</html>
