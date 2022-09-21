@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-check col-9">
+        <input type = "checkbox" class = "testSum5" value="5" onchange="fun1()">
+        <label for = "testSum5"> Test sum + 5 </label><br>
+    </div>
+
+    <script>sdfdf
+    asdasd
+   123
+    asdasd
+
+        // function fun1() {
+        //     var select = document.querySelector(".testSum5")
+        //     if( select.checked == true ){
+        //         console.log("Checkbox Is checked");
+        //     }
+        //     else{
+        //         console.log("Checkbox Is not checked");
+        //     }
+        // }
+        var date1 = new Date('2021.02.01');
+        var date2 = new Date('2021.02.08');
+
+        Date.prototype.getWeek = function(date) {
+            var onejan = new Date(date.getFullYear(), 0, 1);
+            return Math.ceil((((date - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+        }
+        var weekNumber1 = (new Date()).getWeek(date1);
+        var weekNumber2 = (new Date()).getWeek(date2);
+        console.log(weekNumber1, weekNumber2);
+
+        parseInt('%4820109928069'.substring(1),10);
+    
+    </script>
+    
+</body>
+</html>
